@@ -50,8 +50,8 @@ function BuildCharts(selected) {
         //
         let bar_graph = {
             x: results[0].sample_values.slice(0,10).sort((a,b) => a-b),
-            y: results.otu_ids,
-            text: results[0].otu_labels,
+            y: results[0].otu_ids.slice(0,10).reverse().map(function(elem) {return `OTU ${elem}`}),
+            text: results[0].otu_labels.slice(0,10).reverse(),
             type: 'bar',
             orientation: "h"
         };
@@ -62,7 +62,6 @@ function BuildCharts(selected) {
         
         //Create the bar graph to be displayed to the site using id "bar"
         Plotly.newPlot("bar", bar, bar_layout); 
-
 
         //--------------------------------------------------------------
         // #3 from HW Directions, create a bubble graph
