@@ -122,7 +122,21 @@ function BuildCharts(selected) {
                 value: meta[0].wfreq,
                 title: { text: 'Belly Button Washing Frequency' },
                 type: "indicator",
-                mode: "gauge+number"
+                mode: "gauge+number",
+                gauge: {
+                    axis: {range: [null, 9]},
+                    steps: [
+                        {range: [0,1], color: 'f2ffe6',},
+                        {range: [1,2], color: 'd9ffb3'},
+                        {range: [2,3], color: 'bfff80'},
+                        {range: [3,4], color: 'a6ff4d'},
+                        {range: [4,5], color: '8cff1a'},
+                        {range: [5,6], color: '73e600'},
+                        {range: [6,7], color: '59b300'},
+                        {range: [7,8], color: '408000'},
+                        {range: [8,9], color: '264d00'},
+                    ]
+                }
         };
 
         let gauge_layout = { width: 500 };
